@@ -20,6 +20,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color themes
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
+" Git stuff
+Plug 'airblade/vim-gitgutter'
+
+
 call plug#end()
 
 " ---------------------------
@@ -30,6 +34,12 @@ set background=dark
 colorscheme catppuccin_mocha " tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
 let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 set noshowmode
+
+" ------------------
+" Lightline settings
+" ------------------
+" Always show the statusline, even with one window
+set laststatus=2
 
 " -------------------------------
 " NERDTree Keybinds
@@ -92,6 +102,3 @@ nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 nmap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
-
-" Format on save
-autocmd BufWritePre *.py :silent! :CocCommand editor.action.formatDocument
