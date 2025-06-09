@@ -47,10 +47,14 @@ set noshowmode
 set laststatus=2
 
 " -------------------------------
-" NERDTree Keybinds
+" NERDTree settings and keybinds
 " -------------------------------
+" Start NERDTree and put the cursor back in the other window.
+autocmd VimEnter * NERDTree | wincmd p
+
 nmap <C-n> :NERDTreeToggle<CR>    " Toggle with Ctrl+N
 nnoremap <leader>n :NERDTreeFind<CR>  " Reveal current file in NERDTree (like VSCode Explorer)
+nmap <Leader>r :NERDTreeRefreshRoot<CR> " Refresh the tree!
 
 " -------------------------------
 " FZF Keybinds
