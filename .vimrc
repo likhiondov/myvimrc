@@ -91,6 +91,8 @@ function! s:SafeHover()
   endif
 endfunction
 
+" Accept completion if popup is visible, else insert newline
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 " Use <Tab> for trigger completion and navigate
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -102,3 +104,4 @@ nnoremap <silent> K :call CocActionAsync('doHover')<CR>
 nmap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+
