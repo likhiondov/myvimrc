@@ -26,6 +26,11 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
+" --------------------
+" Map leader key first
+" --------------------
+let mapleader = " "  "Space key
+
 " ---------------------------
 " Enable color theme settings
 " ---------------------------
@@ -45,6 +50,7 @@ set laststatus=2
 " NERDTree Keybinds
 " -------------------------------
 nmap <C-n> :NERDTreeToggle<CR>    " Toggle with Ctrl+N
+nnoremap <leader>n :NERDTreeFind<CR>  " Reveal current file in NERDTree (like VSCode Explorer)
 
 " -------------------------------
 " FZF Keybinds
