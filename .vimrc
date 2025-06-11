@@ -49,9 +49,6 @@ set laststatus=2
 " -------------------------------
 " NERDTree settings and keybinds
 " -------------------------------
-" Start NERDTree and put the cursor back in the other window.
-autocmd VimEnter * NERDTree | wincmd p
-
 nmap <C-n> :NERDTreeToggle<CR>    " Toggle with Ctrl+N
 nnoremap <leader>n :NERDTreeFind<CR>  " Reveal current file in NERDTree (like VSCode Explorer)
 nmap <Leader>r :NERDTreeRefreshRoot<CR> " Refresh the tree!
@@ -60,6 +57,18 @@ nmap <Leader>r :NERDTreeRefreshRoot<CR> " Refresh the tree!
 " FZF Keybinds
 " -------------------------------
 nmap <C-p> :Files<CR>             " Ctrl+P to fuzzy find files
+
+" -------------------------------
+" File change handling
+" -------------------------------
+set autoread
+
+" Check if file has changed on focus or buffer switch
+autocmd FocusGained,BufEnter * checktime
+
+" Notify if file has changed and was auto-reloaded
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 
 " -------------------------------
@@ -86,7 +95,7 @@ set smartindent               " Autoindent new lines
 
 " -------------------------------
 " Coc.nvim LSP client configs
-" -------------------------------i
+" -------------------------------
 
 " doHover wrapper that prevents doHover error on things that can't be
 " successfully hovered over
@@ -108,10 +117,9 @@ inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " Show hover doc manually with 'K'
-nnoremap <silent> K :call CocActionAsync('doHover')<CR>
+nnoremap <silent> K :call <SID>SafeHover()<CR>
 
 " Show diagnostics and documentation
-nmap <silent> K :call CocAction('doHover')<CR>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
