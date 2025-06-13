@@ -84,6 +84,9 @@ set encoding=utf-8
 set fileformats=unix,dos,mac
 syntax on                     " Enable syntax highlighting
 filetype plugin indent on     " Enable filetype detection and plugins
+autocmd VimSuspend * silent! wall  " Autosave on suspend
+autocmd FocusLost,WinLeave * silent! wall  " Autosave on lose focus and close buffer
+
 
 " -------------------------------
 " Indentation
