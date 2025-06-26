@@ -31,6 +31,17 @@ call plug#end()
 " --------------------
 let mapleader = " "  "Space key
 
+" ------------------
+" just some keybinds
+" ------------------
+nnoremap <Leader>b :bprevious<CR>
+
+" -------------------------
+" File location preferences
+" -------------------------
+set directory^=/tmp//     " put .swp files somewhere out of the way
+let NERDTreeShowHidden=1  " show hidden like .github/ files
+
 " ---------------------------
 " Enable color theme settings
 " ---------------------------
