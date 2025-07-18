@@ -13,7 +13,7 @@ catppuccin: A dark, visually pleasing color scheme.
 
 vim-gitgutter: Shows git diff markers in the sign column (e.g., added/modified/removed lines).
 
-⚙️ Core Settings
+# ⚙️ Core Settings
 Leader key: Space (<Space>) is set as the leader key.
 
 Buffer handling: Hidden buffers allowed, swap files redirected to /tmp, autoread + autowall on focus/suspend.
@@ -35,7 +35,7 @@ Color: True color enabled (termguicolors) with dark background.
 
 Shows hidden files by default (.github/, etc.).
 
-🔍 FZF Keybinds
+# 🔍 FZF Keybinds
 <C-p>: Launch FZF to search files.
 
 # 🧠 coc.nvim LSP & Autocompletion
