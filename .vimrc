@@ -19,6 +19,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Color themes
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'phanviet/vim-monokai-pro'
+
+" Comprehensive language pack
+Plug 'sheerun/vim-polyglot'
 
 " Git stuff
 Plug 'airblade/vim-gitgutter'
@@ -46,9 +50,8 @@ let NERDTreeShowHidden=1  " show hidden like .github/ files
 " Enable color theme settings
 " ---------------------------
 set termguicolors
-set background=dark
-colorscheme catppuccin_mocha " tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
-let g:lightline = {'colorscheme': 'catppuccin_mocha'}
+colorscheme monokai_pro " tokyonight-night, tokyonight-storm, tokyonight-day, tokyonight-moon
+let g:lightline = {'colorscheme': 'monokai_pro'}
 set noshowmode
 
 " ------------------
